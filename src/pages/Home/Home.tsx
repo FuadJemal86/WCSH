@@ -83,6 +83,7 @@ function Home() {
     setTimeout(() => {
         setLoading(false)
     }, 3000);
+
     if (loading) {
         return (
             <div className=''>
