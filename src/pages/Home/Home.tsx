@@ -72,27 +72,21 @@ interface GalleryImage {
 }
 
 function Home() {
+    const [loading, setLoading] = useState(true)
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
     const [isScrolled, setIsScrolled] = useState(false);
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
     const [statsAnimated, setStatsAnimated] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [loading, setLoading] = useState(true)
+
+
+
 
     setTimeout(() => {
         setLoading(false)
     }, 3000);
 
-    if (loading) {
-        return (
-            <div className=''>
-                <div className="absolute inset-0 flex justify-center items-center text-center bg-white/70 z-30">
-                    <LifeLine color="#d09400" size="medium" text="" textColor="" />
-                </div>
-            </div>
-        )
-    }
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
@@ -337,6 +331,16 @@ function Home() {
         { id: 5, category: "Emergency", title: "Emergency Department", icon: <Siren className="w-12 h-12" /> },
         { id: 6, category: "Technology", title: "Digital Health Records", icon: <Globe className="w-12 h-12" /> }
     ];
+
+    if (loading) {
+        return (
+            <div className=''>
+                <div className="absolute inset-0 flex justify-center items-center text-center bg-white/70 z-30">
+                    <LifeLine color="#d09400" size="medium" text="" textColor="" />
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="min-h-screen bg-white text-black overflow-x-hidden">
