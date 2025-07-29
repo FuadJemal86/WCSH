@@ -9,13 +9,13 @@ import {
     Phone as PhoneIcon, MapPin as LocationIcon, Clock as ClockIcon
 } from 'lucide-react';
 import banner from '../../images/wcsh.jpg'
-import nuro from '../../images/nuro.jpg'
-import nuro1 from '../../images/nuro1.jpg'
-import nuro2 from '../../images/nuro2.jpg'
-import nuro3 from '../../images/nuro3.jpg'
-import nuro4 from '../../images/nuro4.jpg'
-import nuro6 from '../../images/nuro5.jpg'
-import nuro5 from '../../images/nuro6.jpg'
+import banner1 from '../../images/wcsh1.png'
+import nuro from '../../images/doc.jpeg'
+import nuro1 from '../../images/doc1.jpeg'
+import nuro2 from '../../images/doc2.jpeg'
+import nuro3 from '../../images/doc3.jpeg'
+import nuro4 from '../../images/doc4.jpeg'
+import nuro6 from '../../images/doc5.jpeg'
 
 interface Service {
     icon: React.ReactNode;
@@ -129,7 +129,7 @@ function Home() {
         setIsMenuOpen(false);
     };
 
-    const bannerImages = [banner, nuro, nuro1];
+    const bannerImages = [banner, banner1, banner];
 
     // Auto-slide effect
     useEffect(() => {
@@ -213,7 +213,7 @@ function Home() {
             title: "Orthopedics",
             description: "Bone and joint specialists",
             color: "from-orange-400 to-orange-600",
-            image: nuro5
+            image: nuro
         },
         {
             icon: <Lightning className="w-10 h-10" />,
@@ -492,7 +492,7 @@ function Home() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
-                            About Our <span className='text-amber-800'>Hospital</span>
+                            About  <span className='text-amber-800'>Hospital</span>
                         </h2>
                         <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
                             Leading healthcare innovation with a legacy of excellence and compassionate care
@@ -637,7 +637,7 @@ function Home() {
                             >
                                 <div className='absolute inset-0'>
                                     <img
-                                        className='w-full h-full object-cover transition-opacity duration-700 group-hover:opacity-30'
+                                        className='w-full transition-opacity duration-700 group-hover:opacity-30'
                                         src={specialty.image}
                                         alt=""
                                     />
