@@ -16,6 +16,7 @@ import nuro2 from '../../images/doc2.jpeg'
 import nuro3 from '../../images/doc3.jpeg'
 import nuro4 from '../../images/doc4.jpeg'
 import nuro6 from '../../images/doc5.jpeg'
+import { LifeLine } from 'react-loading-indicators'
 
 interface Service {
     icon: React.ReactNode;
@@ -77,7 +78,20 @@ function Home() {
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
     const [statsAnimated, setStatsAnimated] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [loading, setLoading] = useState(true)
 
+    setTimeout(() => {
+        setLoading(false)
+    }, 3000);
+    if (loading) {
+        return (
+            <div className=''>
+                <div className="absolute inset-0 flex justify-center items-center text-center bg-white/70 z-30">
+                    <LifeLine color="#d09400" size="medium" text="" textColor="" />
+                </div>
+            </div>
+        )
+    }
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
