@@ -358,6 +358,51 @@ function Home() {
                 </div>
             </nav>
 
+            {/* Mobile Navigation - Show only on small screens */}
+            <nav className={`lg:hidden fixed top-0 left-0 right-0 z-50 w-full h-20 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg backdrop-blur-sm' : 'bg-white/95'
+                }`}>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 h-full">
+                    <div className="flex justify-between items-center h-full">
+                        <div className="flex items-center space-x-3 group">
+                            <div className="w-12 h-12 bg-gradient-to-br from-amber-800 to-amber-900 rounded-full flex items-center justify-center shadow-md hover:scale-105 transition-transform duration-200">
+                                <Heart className="w-7 h-7 text-white" />
+                            </div>
+                            <div>
+                                <h1 className="text-2xl font-bold text-amber-800">WORABE</h1>
+                                <p className="text-xs text-gray-600">Comprehensive Specialized Hospital</p>
+                            </div>
+                        </div>
+
+                        <button
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                            className="p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+                        >
+                            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        </button>
+                    </div>
+                </div>
+
+                {/* Mobile Menu Dropdown */}
+                {isMenuOpen && (
+                    <div className="absolute top-full left-0 right-0 bg-white shadow-lg border-t">
+                        <div className="px-4 py-2">
+                            {navItems.map((item) => (
+                                <button
+                                    key={item.id}
+                                    onClick={() => scrollToSection(item.id)}
+                                    className={`block w-full text-left px-4 py-3 text-sm font-medium rounded-lg transition-all duration-200 ${activeSection === item.id
+                                            ? 'text-amber-800 bg-amber-50'
+                                            : 'text-gray-700 hover:text-amber-800 hover:bg-amber-50'
+                                        }`}
+                                >
+                                    {item.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </nav>
+
             {/* Hero Section */}
             <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 rounded-bl-[70px] rounded-br-[70px]">
                 <div className="absolute inset-0">
